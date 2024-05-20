@@ -1,0 +1,58 @@
+﻿<Page x:Class="DemExamProd.Pages.UsersPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:DemExamProd.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="UsersPage" FontSize="16" Loaded="Page_Loaded">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <DockPanel Margin="5">
+            <Button x:Name="BtnBack"
+                    Content="Назад"
+                    Padding="10 5"
+                    Click="BtnBack_Click"
+                    HorizontalAlignment="Left"
+                    DockPanel.Dock="Left"/>
+            <Button x:Name="BtnAddUser"
+                    Content="Добавить"
+                    Padding="10 5"
+                    Click="BtnAddUser_Click"
+                    HorizontalAlignment="Right" 
+                    DockPanel.Dock="Right"/>
+            <Button x:Name="BtnSave"
+                    Content="Сохранить"
+                    Padding="10 5"
+                    Click="BtnSave_Click"
+                    HorizontalAlignment="Right" 
+                    Margin=" 0 0 5 0"
+                    DockPanel.Dock="Right"/>
+            <TextBox x:Name="TbSearch" 
+                     Margin="5 0" 
+                     DockPanel.Dock="Top"
+                     HorizontalAlignment="Stretch"
+                     TextChanged="TbSearch_TextChanged"/>
+            
+        </DockPanel>
+
+        <DataGrid x:Name="DgUsers"
+                  Grid.Row="1"
+                  Margin="5"
+                  AutoGenerateColumns="False"
+                  CanUserAddRows="False"> 
+            <DataGrid.Columns>
+                <DataGridTextColumn IsReadOnly="true" Width="3*" Header="Имя пользователя" Binding="{Binding FullName}"/>
+                <DataGridTextColumn IsReadOnly="true" Width="*" Header="Логин" Binding="{Binding Login}"/>
+                <DataGridTextColumn IsReadOnly="true" Width="*" Header="Роль пользователя" Binding="{Binding Role.Name}"/>
+                <DataGridCheckBoxColumn Header="Уволен" Binding="{Binding Status}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Page>

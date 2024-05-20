@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="2c484a536b0c42dbb4e6b8db206e5b33" Name="Diagram1">
+        <EntityTypeShape EntityType="DemExamDBModel.Order" Width="1.5" PointX="5.25" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DemExamDBModel.OrderStatus" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DemExamDBModel.PaymentMethod" Width="1.5" PointX="3" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DemExamDBModel.PaymentStatus" Width="1.5" PointX="3" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DemExamDBModel.Role" Width="1.5" PointX="0.75" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DemExamDBModel.Shift" Width="1.5" PointX="5.25" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DemExamDBModel.sysdiagrams" Width="1.5" PointX="7.75" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DemExamDBModel.User" Width="1.5" PointX="3" PointY="3.375" IsExpanded="true" />
+        <AssociationConnector Association="DemExamDBModel.FK_Order_OrderStatus1" ManuallyRouted="false" />
+        <AssociationConnector Association="DemExamDBModel.FK_Order_PaymentMethod1" ManuallyRouted="false" />
+        <AssociationConnector Association="DemExamDBModel.FK_Order_PaymentStatus1" ManuallyRouted="false" />
+        <AssociationConnector Association="DemExamDBModel.user___fk" ManuallyRouted="false" />
+        <AssociationConnector Association="DemExamDBModel.OrderUser" ManuallyRouted="false" />
+        <AssociationConnector Association="DemExamDBModel.UserShift" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

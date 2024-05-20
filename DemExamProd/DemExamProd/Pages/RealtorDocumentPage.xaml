@@ -1,0 +1,72 @@
+﻿<Page x:Class="DemExamProd.Pages.RealtorDocumentPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:DemExamProd.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="RealtorDocumentPage" Loaded="Page_Loaded">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Документы" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="5" FontSize="36">
+            </TextBlock>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.4*"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="0.4*"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="Поиск:" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5"></TextBlock>
+            <TextBox x:Name="tbxSearch" TextChanged="tbxSearch_TextChanged" Grid.Column="1" Margin="5" FontSize="16"></TextBox>
+            <TextBlock Text="Статус:" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5" Grid.Column="2"></TextBlock>
+            <ComboBox x:Name="cmbStatus" SelectionChanged="cmbStatus_SelectionChanged" Grid.Column="3" DisplayMemberPath="Name" Margin="5" FontSize="16"></ComboBox>
+        </Grid>
+        <ListView Grid.Row="2" Margin="5" x:Name="lvDocument" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel></StackPanel>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="HorizontalAlignment" Value="Stretch"></Setter>
+                    <Setter Property="HorizontalContentAlignment" Value="Stretch"></Setter>
+                </Style>
+            </ListView.ItemContainerStyle>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="{Binding ClientfullName}" Grid.ColumnSpan="4" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5"></TextBlock>
+                        <TextBlock Text="{Binding Address}" Grid.ColumnSpan="4" Grid.Row="1" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5"></TextBlock>
+                        <TextBlock Text="Дата:"  Grid.Row="2" FontSize="18"  Margin="5" HorizontalAlignment="Right"></TextBlock>
+                        <TextBlock Text="{Binding CreationDate, StringFormat=dd.MM.yyyy}" Grid.Column="1" Grid.Row="2" FontSize="18"  Margin="5"></TextBlock>
+                        <TextBlock Text="Статус:" Grid.Column="2" Grid.Row="2" FontSize="18"  Margin="5" HorizontalAlignment="Right"></TextBlock>
+                        <TextBlock Text="{Binding PaymentStatus.Name}" Grid.Column="3" Grid.Row="2" FontSize="18"  Margin="5"></TextBlock>
+                        <Button x:Name="btnPay" Click="btnPay_Click" Grid.Row="3" Grid.ColumnSpan="4" Margin="5" Content="Оплачен" FontSize="16" IsEnabled="{Binding Pay}"></Button>
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Button x:Name="btnAddDocument" Click="btnAddDocument_Click" Grid.Row="4" Content="Добавить документ" FontSize="18" Margin="5"></Button>
+    </Grid>
+</Page>

@@ -1,0 +1,19 @@
+﻿<Window x:Class="DemExamProd.Windows.RealtorWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DemExamProd.Windows"
+        mc:Ignorable="d"
+        Title="RealtorWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBlock Text="Агенство" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="5" FontSize="36"></TextBlock>
+        <TextBlock VerticalAlignment="Center" HorizontalAlignment="Right" Text="{Binding FullName}" Margin="5" FontSize="16"></TextBlock>
+        <Button x:Name="btnExit" Click="btnExit_Click" Content="Выход" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="18" Padding="20 5" Margin="5"></Button>
+        <Frame Grid.Row="2" Name="RealtorFrame" NavigationUIVisibility="Hidden"></Frame>
+    </Grid>
+</Window>

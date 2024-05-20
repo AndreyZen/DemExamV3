@@ -1,0 +1,53 @@
+﻿<Page x:Class="DemExamProd.Pages.AdminMenuPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:DemExamProd.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AdminMenuPage" FontSize="16"
+      Loaded="Page_Loaded">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <TextBlock x:Name="TbUserName"
+                   Text="Добро пожаловать: "
+                   FontFamily="Arial Black"
+                   HorizontalAlignment="Center"
+                   Grid.ColumnSpan="3"
+                   Margin="10"/>
+
+        <StackPanel Grid.Column="1"
+                    VerticalAlignment="Center"
+                    Grid.Row="1">
+            <Button Margin="5" 
+                    Padding="5"
+                    x:Name="BtnUsers"
+                    Content="Пользователи"
+                    Click="BtnUsers_Click"/>
+            <Button Margin="5" 
+                    Padding="5"
+                    x:Name="BtnShift"
+                    Content="Смены"/>
+            <Button Margin="5"
+                    Padding="5"
+                    x:Name="BtnOrders"
+                    Content="Договора"/>
+            <Button Margin="5"
+                    Padding="5"
+                    x:Name="BtnLogout"
+                    Click="BtnLogout_Click"
+                    Content="Выход"/>
+        </StackPanel>
+    </Grid>
+</Page>
